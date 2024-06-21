@@ -1,0 +1,13 @@
+.container form {
+  max-width: 500px;
+  margin-top: 2rem;
+}
+
+.container form > * {
+  margin-top: 1rem;
+}
+
+.container button {
+    margin-top: 2rem;
+    width: 100%;
+}

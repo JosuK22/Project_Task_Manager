@@ -1,0 +1,74 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  height: 100%;
+}
+
+.groupOne,
+.groupTwo {
+  display: flex;
+  justify-content: space-between;
+}
+
+.groupTwo {
+  margin-top: 0.5rem;
+  position: relative;
+  z-index: 10;
+}
+
+.listbox {
+  position: relative;
+}
+
+.listboxButton {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.5rem;
+  font-size: 1rem;
+  background-color: transparent;
+  border: none;
+  font-family: inherit;
+}
+
+.listboxOptions {
+  position: absolute;
+  list-style-type: none;
+  right: 0;
+  box-shadow: 0 25.6px 57.6px 0 rgb(0 0 0 / 22%),
+    0 4.8px 14.4px 0 rgb(0 0 0 / 18%);
+  border-radius: 0.5rem;
+  overflow: hidden;
+  background-color: white;
+}
+
+.active {
+  background-color: #4391ed10;
+}
+
+.selected {
+  background-color: var(--primary);
+  color: white;
+  box-shadow: 0 20px 10px -20px rgba(0, 0, 0, 0.45) inset;
+}
+
+.listboxOption {
+  padding: 0.5rem 3rem 0.5rem 0.5rem;
+  display: flex;
+  gap: 0.5rem;
+  white-space: nowrap;
+  cursor: pointer;
+  margin: 0.5rem;
+  border-radius: 0.325rem;
+  position: relative;
+  z-index: 40;
+}
+
+.checkIcon {
+  width: 2rem;
+}
+
+.rotate {
+  transform: rotateX(180deg);
+}

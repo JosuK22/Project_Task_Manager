@@ -1,0 +1,106 @@
+.container {
+  background-color: white;
+  padding: 0.75rem;
+  border-radius: 0.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  box-shadow: 0 6.4px 14.4px 0 rgb(0 0 0 / 13%),
+    0 1.2px 3.6px 0 rgb(0 0 0 / 11%);
+}
+
+.groupOne {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.moderate {
+  color: #18b0ff;
+  font-size: 2rem;
+}
+
+.low {
+  color: #63c05b;
+  font-size: 2rem;
+}
+
+.high {
+  color: #ff2473;
+  font-size: 2rem;
+}
+
+.badges {
+  margin-top: 0.5rem;
+  display: flex;
+  justify-content: space-between;
+}
+
+.categoryBadges {
+  display: flex;
+  flex: 1;
+  gap: 0.5rem;
+  justify-content: flex-end;
+}
+
+.menu {
+  position: relative;
+  z-index: 10;
+}
+
+.menuButton {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 1rem;
+  background-color: transparent;
+  border: none;
+  font-family: inherit;
+  cursor: pointer;
+}
+
+.menuItems {
+  position: absolute;
+  list-style-type: none;
+  right: 0;
+  box-shadow: 0 6.4px 14.4px 0 rgb(0 0 0 / 13%),
+    0 1.2px 3.6px 0 rgb(0 0 0 / 11%);
+  border-radius: 0.5rem;
+  overflow: hidden;
+  background-color: white;
+}
+
+.menuItem {
+  padding: 0.5rem 3rem 0.5rem 0.5rem;
+  display: flex;
+  gap: 0.5rem;
+  white-space: nowrap;
+  cursor: pointer;
+  margin: 0.5rem;
+  border-radius: 0.25rem;
+}
+
+.active {
+  background-color: #4391ed10;
+}
+
+.selected {
+  background-color: var(--primary);
+  color: white;
+  box-shadow: 0 20px 10px -20px rgba(0, 0, 0, 0.45) inset;
+}
+
+.error {
+  color: red;
+}
+
+.error:hover {
+  background-color: #ff0b0b10;
+}
+
+.deleteActions {
+  margin-top: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}

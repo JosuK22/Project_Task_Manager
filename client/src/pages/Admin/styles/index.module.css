@@ -1,0 +1,16 @@
+.container {
+  display: flex;
+  height: 100vh;
+}
+
+.navigation {
+  min-width: 300px;
+  border-right: 2px solid #edf5fe;
+  height: 100%;
+}
+
+.outlet {
+  overflow: hidden;
+  flex: 1;
+  padding: 1.5rem;
+}
