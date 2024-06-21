@@ -9,7 +9,7 @@
     "start:prod": "SET NODE_ENV=production&&SET PORT=8080 & node index.js",
     "build": "SET NODE_ENV=production&&SET PORT=8080 & node index.js"
   },
-  "author": "Yash Gajbhiye",
+  "author": "Joseph K Anoj",
   "license": "ISC",
   "dependencies": {
     "bcrypt": "^5.1.1",
