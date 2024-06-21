@@ -114,12 +114,26 @@ export default function TaskForm({
 
   return (
     <div className={styles.container}>
+      <div className={styles.modal1}></div>
       <div className={styles.input}>
         <label htmlFor="taskTitle">
           Title <span style={{ color: 'red' }}>*</span>
         </label>
         <input
           placeholder="Title"
+          type="text"
+          id="taskTitle"
+          value={task.title}
+          onChange={(e) => updateTitle(e.target.value)}
+        />
+      </div>
+
+      <div className={styles.input2}>
+        <label htmlFor="taskTitle">
+          Assign to 
+        </label>
+        <input
+          placeholder="Add a assignee"
           type="text"
           id="taskTitle"
           value={task.title}

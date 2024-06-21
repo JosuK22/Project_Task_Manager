@@ -2,23 +2,37 @@
   display: flex;
   flex-direction: column;
   gap: 1.5rem;
+  min-height: 550px;
+  /* background-color: yellow; */
+  
 }
 
 .input {
   display: flex;
   flex-direction: column;
   gap: 0.325rem;
-  background-color: aqua;
+  
 }
-
-.input input {
+.input2 {
+  display: flex;
+  justify-content: left;
+  align-items: center;
+}
+.input input{
   width: 100%;
   border: 2px solid var(--neutral);
   padding: 0.75rem;
   border-radius: 0.75rem;
   font-size: 1rem;
 }
-
+.input2 input{
+  width: 85%;
+  border: 2px solid var(--neutral);
+  padding: 0.75rem;
+  border-radius: 0.75rem;
+  font-size: 1rem;
+  margin-left: 1.4rem;
+} 
 .input input:focus {
   outline: none;
 }
@@ -26,14 +40,14 @@
 .radioGroup {
   flex: 1;
   display: flex;
-  gap: 1.5rem;
+  align-items: center;
+  justify-content: center;
   justify-content: space-between;
-  background-color: aquamarine;
 }
 
 .radioOptions {
   display: flex;
-  justify-content: flex-end;
+  justify-content: center;
   gap: 0.5rem;
   flex: 1;
 }
@@ -63,8 +77,6 @@
 
 .buttonGroup {
   display: flex;
-  background-color: blue;
-  margin-top: 100px;
 }
 
 .actions {
@@ -78,6 +90,9 @@
 
 .lists {
   max-height: 19vh;
+  min-height: 19vh;
+  max-width: 100%;
+  min-width: 98%;
   overflow-y: auto;
   display: flex;
   flex-direction: column;
@@ -88,11 +103,13 @@
 .list {
   display: flex;
   gap: 1rem;
+  max-width: 600px;
   margin-top: 0.5rem;
   padding: 0.75rem 1rem;
   border: 2px solid var(--neutral);
   border-radius: 0.75rem;
   align-items: center;
+  
 }
 
 .list input[type='text'] {
@@ -121,5 +138,9 @@
 
 .addButton {
   margin-top: 0.5rem;
+}
 
+.datePicker{
+  background-color: yellow;
+  
 }
