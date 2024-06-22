@@ -9,9 +9,18 @@ const morgan = require('morgan');
 
 const app = express();
 
+// Define the allowed methods
+const corsOptions = {
+  origin: 'http://localhost:5173', // Allow your client URL
+  methods: ['GET', 'POST', 'PUT', 'PATCH', 'DELETE', 'OPTIONS'], // Add all methods you want to allow
+  allowedHeaders: ['Content-Type', 'Authorization'], // Add any headers you need to allow
+};
+
 app.use(morgan('dev'));
-app.use(cors());
+app.use(cors(corsOptions));
 app.use(express.json());
+
+app.options('*', cors(corsOptions)); // Allow OPTIONS on all routes
 
 app.get('/', (req, res) => {
   return res.status(200).send('Welcome to my server');
@@ -22,15 +31,14 @@ app.get('/api/v1/', (req, res) => {
 });
 
 app.use('/api/v1/auth', authRouter);
-
 app.use('/api/v1/tasks', taskRouter);
-
 app.use('/api/v1/users', userRouter);
 
 app.all('*', (req, res, next) => {
-  throw new AppError('Route does not exists', 404);
+  throw new AppError('Route does not exist', 404);
 });
 
 app.use(globalErrorHandler);
 
 module.exports = app;
+

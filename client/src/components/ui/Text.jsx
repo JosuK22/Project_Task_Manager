@@ -62,5 +62,5 @@ Text.propTypes = {
   color: PropTypes.string,
   style: PropTypes.object,
   children: PropTypes.any,
-  className: PropTypes.object,
+  className: PropTypes.string,
 };

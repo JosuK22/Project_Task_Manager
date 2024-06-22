@@ -8,11 +8,6 @@
   width: 100%;
 }
 
-.modal1{
-  height: 40px;
-  background-color: rgb(175, 97, 2);
-}
-
 .backdrop {
   position: absolute;
   inset: 0;
@@ -22,7 +17,7 @@
 }
 
 .content {
-  min-height: 596px;
+  /* min-height: 596px; */
   background-color: rgb(255, 255, 255);
   border-radius: 1rem;
   padding: 1rem 1.5rem;
@@ -31,7 +26,7 @@
   width: 95%;
   animation: scaleIn 200ms ease-in-out;
   box-shadow: rgba(0, 0, 0, 0.25) 0px 25px 50px -12px;
-  min-width: 700px;
+  /* min-width: 700px; */
   max-width: 100%;
 }
 

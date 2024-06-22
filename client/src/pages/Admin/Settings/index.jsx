@@ -6,23 +6,29 @@ import * as yup from 'yup';
 import FormInput from '../../../components/form/FormInput';
 import { Button, Text } from '../../../components/ui';
 import { useContext, useEffect, useState } from 'react';
-import { Eye, User } from 'lucide-react';
+import { Eye, User, Lock, Mail } from 'lucide-react';
 import { AuthContext } from '../../../store/AuthProvider';
 import styles from './styles/index.module.css';
 
 const schema = yup
   .object({
     name: yup.string(),
+    email: yup.string(),
     newPassword: yup.string(),
     oldPassword: yup.string(),
   })
   .required();
 
-const defaultValues = { name: '', oldPassword: '', newPassword: '' };
-
 export default function Settings() {
   const [isSafeToReset, setIsSafeToReset] = useState(false);
   const { user, updateInfo } = useContext(AuthContext);
+
+  const defaultValues = {
+    name: user?.info?.name || '',
+    email: user?.info?.email || '',
+    oldPassword: '',
+    newPassword: '',
+  };
 
   const {
     register,
@@ -37,9 +43,7 @@ export default function Settings() {
 
   const onSubmit = async (data) => {
     try {
-      
       const res = await fetch(import.meta.env.VITE_BACKEND_URL + '/api/v1/users', {
-        // const res = await fetch("http://localhost:3003/" + '/users', {
         method: 'PATCH',
         body: JSON.stringify(data),
         headers: {
@@ -69,7 +73,6 @@ export default function Settings() {
     }
   };
 
-  //https://stackoverflow.com/questions/62741410/react-hook-form-empty-input-field-after-each-submit
   useEffect(() => {
     if (!isSafeToReset) return;
 
@@ -91,20 +94,27 @@ export default function Settings() {
           mainIcon={<User />}
         />
         <FormInput
-          error={errors.name}
+          error={errors.email}
+          label="email"
+          register={register}
+          placeholder={'Email'}
+          mainIcon={<Mail />}
+        />
+        <FormInput
+          error={errors.oldPassword}
           label="oldPassword"
           register={register}
           placeholder={'Old Password'}
           secondaryIcon={<Eye />}
-          mainIcon={<User />}
+          mainIcon={<Lock />}
           type="password"
         />
         <FormInput
-          error={errors.name}
+          error={errors.newPassword}
           label="newPassword"
           register={register}
           placeholder={'New Password'}
-          mainIcon={<User />}
+          mainIcon={<Lock />}
           secondaryIcon={<Eye />}
           type="password"
         />

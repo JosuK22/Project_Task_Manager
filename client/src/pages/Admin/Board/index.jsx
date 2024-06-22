@@ -1,11 +1,12 @@
 import { Listbox } from '@headlessui/react';
-import { ChevronDown } from 'lucide-react';
+import { ChevronDown, UsersRound } from 'lucide-react';
 import { useContext } from 'react';
 import { Text } from '../../../components/ui';
 import { AuthContext } from '../../../store/AuthProvider';
 import { TasksContext } from '../../../store/TaskProvider';
 import getFormattedDate from '../../../utils/getFormatedDate';
 import TasksContainer from './TasksContainer';
+
 import styles from './styles/index.module.css';
 
 const options = [
@@ -23,7 +24,7 @@ export default function Board() {
     <div className={styles.container}>
       <div className={styles.groupOne}>
         <Text step={5} weight="500">
-          Welcome! {user.info.name}
+          Welcome! {user?.info?.name || 'Guest'}
         </Text>
         <Text style={{ opacity: '0.4' }} weight="500">
           {dateString}
@@ -31,10 +32,21 @@ export default function Board() {
       </div>
 
       <div className={styles.groupTwo}>
-        <Text step={6} weight="500">
-          Board
-        </Text>
 
+        <div className={styles.subgroup}>
+          
+          <Text className={styles.board} step={6} weight="500">
+            Board 
+          </Text>
+            <span className={styles.icon}>
+              <UsersRound className={styles.addusers}/>
+            </span>
+            <input className={styles.email} type='email' placeholder='  Add People' autoComplete='off'></input> 
+
+        </div>
+        
+
+        
         <Listbox
           as="div"
           className={styles.listbox}
@@ -44,7 +56,7 @@ export default function Board() {
           {({ open }) => (
             <>
               <Listbox.Button className={styles.listboxButton}>
-                {selectedDateRange.name}
+                {selectedDateRange?.name || 'Select a range'}
                 <ChevronDown size={16} className={open ? styles.rotate : ''} />
               </Listbox.Button>
 
@@ -53,9 +65,9 @@ export default function Board() {
                   <Listbox.Option key={option.id} value={option}>
                     {({ active, selected }) => (
                       <div
-                        className={`${active && styles.active} ${
+                        className={`${active ? styles.active : ''} ${
                           styles.listboxOption
-                        } ${selected && styles.selected}`}
+                        } ${selected ? styles.selected : ''}`}
                       >
                         {option.name}
                       </div>

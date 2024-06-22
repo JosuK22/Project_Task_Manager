@@ -2,11 +2,12 @@ import { Database, LogOut, PanelsTopLeft, Settings } from 'lucide-react';
 import { Link, NavLink } from 'react-router-dom';
 import logo from '../../assets/logo.png';
 import { Button, Text } from '../../components/ui';
-import styles from './styles/Navigation.module.css';
 import { useContext } from 'react';
 import { AuthContext } from '../../store/AuthProvider';
 import useModal from '../../hooks/useModal';
 import Modal from '../../components/ui/Modal';
+
+import styles from './styles/Navigation.module.css';
 
 export default function Navigation() {
   const { logout } = useContext(AuthContext);
@@ -15,12 +16,13 @@ export default function Navigation() {
   return (
     <>
       <div className={styles.container}>
+        <div className={styles.linkContainer}>
         <div className={styles.logo}>
           <div className={styles.image}>
             <img src={logo} alt="Pro manage" />
           </div>
           <Link to="/">
-            <Text step={6} weight="600">
+            <Text step={4} weight="800">
               Pro Manage
             </Text>
           </Link>
@@ -57,16 +59,18 @@ export default function Navigation() {
             <Text weight="500">Settings</Text>
           </NavLink>
         </nav>
-
+        </div>
         <div onClick={toggleModal} className={styles.logout}>
           <div className={styles.icon}>
             <LogOut />
           </div>
           <Text>Logout</Text>
         </div>
+        
       </div>
 
       {isOpen && (
+
         <Modal toggleModal={toggleModal}>
           <Text step={4} weight="500" style={{ textAlign: 'center' }}>
             Are you sure want to logout?
@@ -79,6 +83,7 @@ export default function Navigation() {
             </Button>
           </div>
         </Modal>
+        
       )}
     </>
   );

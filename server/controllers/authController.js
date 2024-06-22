@@ -3,6 +3,8 @@ const User = require('../model/userModel');
 const catchAsync = require('../utils/catchAsync');
 const jwt = require('jsonwebtoken');
 
+
+
 const AppError = require('../utils/AppError');
 
 exports.register = catchAsync(async (req, res, next) => {

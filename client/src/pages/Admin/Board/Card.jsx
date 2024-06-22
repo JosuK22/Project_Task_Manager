@@ -105,9 +105,12 @@ export default function Card({ task, isOpen, toggleDisclosure }) {
           </div>
         </div>
 
-        <Text step={5} weight="500">
-          {task.title}
-        </Text>
+        <div className={styles['card-title-container']}>
+          <Text step={5} weight="500" className={styles['text-truncate']}>
+            {task.title}
+          </Text>
+          <div className={styles.tooltip}>{task.title}</div>
+        </div>
 
         <CheckLists
           isOpen={isOpen}
@@ -164,7 +167,7 @@ export default function Card({ task, isOpen, toggleDisclosure }) {
               {isLoading ? 'Deleting...' : 'Yes, Delete'}
             </Button>
             <Button variant="outline" color="error" onClick={toggleDeleteModal}>
-              Canel
+              Cancel
             </Button>
           </div>
         </Modal>
