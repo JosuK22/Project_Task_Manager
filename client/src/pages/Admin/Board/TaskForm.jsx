@@ -8,11 +8,13 @@ import { Button, Text } from '../../../components/ui';
 import { TasksContext } from '../../../store/TaskProvider';
 import styles from './styles/TaskForm.module.css';
 import toast from 'react-hot-toast';
+import Dropdown from '../../../components/form/SearchableDropdown/Dropdown';
 
 const dummyTask = {
   title: '',
   checklists: [],
   priority: 'high',
+  assignee: '', // Add assignee field to dummyTask
 };
 
 export default function TaskForm({
@@ -66,6 +68,12 @@ export default function TaskForm({
     });
   };
 
+  const updateAssignee = (value) => {
+    setTask((draft) => {
+      draft.assignee = value;
+    });
+  };
+
   const addList = () => {
     setTask((draft) => {
       draft.checklists.push({
@@ -78,7 +86,6 @@ export default function TaskForm({
   };
 
   const deletList = (id) => {
-    console.log(id);
     setTask((draft) => {
       draft.checklists = draft.checklists.filter((list) => list._id !== id);
     });
@@ -129,16 +136,18 @@ export default function TaskForm({
       </div>
 
       <div className={styles.input2}>
-        <label htmlFor="taskTitle">
-          Assign to 
+
+        <label htmlFor="assigneeDropdown" className={styles.label}>
+          Assign to
         </label>
-        <input
-          placeholder="Add a assignee"
-          type="text"
-          id="taskTitle"
-          // value={task.title}
-          // onChange={(e) => updateTitle(e.target.value)}
+        <div className={styles.dropdown}>
+        <Dropdown
+          id="assigneeDropdown"
+          onChange={(selectedOption) => updateAssignee(selectedOption.value)}
         />
+        </div>
+        
+
       </div>
 
       <RadioGroup
@@ -258,7 +267,7 @@ export default function TaskForm({
           <Button variant="outline" color="error" onClick={toggleModal}>
             Cancel
           </Button>
-          <Button onClick={action == 'add' ? handleAddTask : handleUpdateTask}>
+          <Button onClick={action === 'add' ? handleAddTask : handleUpdateTask}>
             {isLoading ? 'Saving...' : 'Save'}
           </Button>
         </div>

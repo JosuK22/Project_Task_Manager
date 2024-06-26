@@ -12,12 +12,15 @@
   display: flex;
   flex-direction: column;
   gap: 0.325rem;
+  font-family: Inter;
   
 }
 .input2 {
   display: flex;
   justify-content: left;
   align-items: center;
+  font-family: Inter;
+  /* background-color: yellow; */
 }
 .input input{
   width: 100%;
@@ -37,7 +40,12 @@
 .input input:focus {
   outline: none;
 }
-
+.label{
+  width: 15%;
+}
+.dropdown{
+  width: 85%;
+}
 .radioGroup {
   flex: 1;
   display: flex;

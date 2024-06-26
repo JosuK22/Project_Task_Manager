@@ -66,7 +66,7 @@ exports.createTask = catchAsync(async (req, res, next) => {
 
 exports.updateTask = catchAsync(async (req, res, next) => {
   const { taskId } = req.params;
-  const { title, priority, checklists, dueDate, status } = req.body;
+  const { title, priority, checklists, assignee, dueDate, status } = req.body;
 
   const updatedTask = await Task.findOneAndUpdate(
     { _id: taskId, createdBy: req.user._id },
@@ -74,6 +74,7 @@ exports.updateTask = catchAsync(async (req, res, next) => {
       title,
       priority,
       checklists,
+      assignee,
       dueDate,
       status,
     },

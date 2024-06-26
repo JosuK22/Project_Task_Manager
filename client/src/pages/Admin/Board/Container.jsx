@@ -49,6 +49,7 @@ export default function Container({ tasks, category }) {
               size={20}
               color={openDisclosures.length ? '#17a2b8' : '#767575'}
               onClick={closeAllDisclosure}
+              style={{ transform: 'scaleX(-1)' }} 
             />
           </div>
         </div>

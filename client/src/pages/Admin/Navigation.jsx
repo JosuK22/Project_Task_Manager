@@ -19,7 +19,7 @@ export default function Navigation() {
         <div className={styles.linkContainer}>
         <div className={styles.logo}>
           <div className={styles.image}>
-            <img src={logo} alt="Pro manage" />
+            <img src={logo} alt="Pro manage"/>
           </div>
           <Link to="/">
             <Text step={4} weight="800">

@@ -12,19 +12,15 @@ import styles from './styles.module.css';
 
 
 const emailRegex = /^[\w-.]+@([\w-]+\.)+[\w-]{2,4}$/;
+const message = '* This field is required';
 
 const schema = yup
   .object({
-    name: yup.string('Name is required').required(),
-    email: yup
-      .string()
-      .required('Email is required')
-      .matches(emailRegex, { message: 'Email is not valid' }),
-    password: yup.string().required('Password is required'),
-    confirmPassword: yup
-      .string()
-      .required('Confirm Password is required')
-      .oneOf([yup.ref('password')], 'Passwords do not match'),
+    
+    name: yup.string().required(message),
+    email: yup.string().required(message).matches(emailRegex, { message: 'Email is not valid' }),
+    password: yup.string().required(message),
+    confirmPassword: yup.string().required(message).oneOf([yup.ref('password')], 'Passwords do not match'),
   })
   .required();
 

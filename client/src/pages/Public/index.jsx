@@ -2,7 +2,9 @@ import { Link, useParams } from 'react-router-dom';
 import logo from '../../assets/logo.png';
 import useFetch from '../../hooks/useFetch';
 import PublicCard from './PublicCard';
+import { Text } from '../../components/ui';
 import styles from './styles/index.module.css';
+
 
 export default function PublicLayout() {
   const { taskId } = useParams();
@@ -31,7 +33,7 @@ export default function PublicLayout() {
         </div>
 
         <div className={styles.title}>
-          <Link to='/'>Pro Manage</Link>
+          <Text step={4} weight='600'>Pro Manage</Text>
         </div>
       </div>
 

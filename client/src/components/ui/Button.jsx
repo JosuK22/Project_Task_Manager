@@ -21,6 +21,6 @@ Button.propTypes = {
   children: PropTypes.string,
   toggle: PropTypes.func,
   color: PropTypes.oneOf(['primary', 'error', 'success']),
-  variant: PropTypes.oneOf(['outline', 'ghost']),
+  variant: PropTypes.oneOf(['outline','jumbo', 'ghost']),
   onClick: PropTypes.func,
 };

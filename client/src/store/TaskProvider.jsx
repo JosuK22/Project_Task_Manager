@@ -1,11 +1,4 @@
-import {
-  createContext,
-  useCallback,
-  useContext,
-  useEffect,
-  useMemo,
-  useState,
-} from 'react';
+import {createContext, useCallback, useContext, useEffect, useMemo, useState} from 'react';
 import PropTypes from 'prop-types';
 import { AuthContext } from './AuthProvider';
 import toast from 'react-hot-toast';

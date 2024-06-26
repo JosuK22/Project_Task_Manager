@@ -1,5 +1,4 @@
 import PropTypes from 'prop-types';
-
 import styles from './styles/Text.module.css';
 
 export default function Text({
@@ -9,6 +8,7 @@ export default function Text({
   color = 'inherit',
   style,
   className,
+  fontFamily, // New prop for font family
 }) {
   let stepStyle;
 
@@ -37,20 +37,19 @@ export default function Text({
     case 8:
       stepStyle = styles.stepEight;
       break;
-    case 9:
-      stepStyle = styles.stepNine;
-      break;
+    default:
+      stepStyle = styles.stepThree; // Default to step three if step value is not provided
   }
 
+  const fontStyles = {
+    fontWeight: weight,
+    color: color,
+    fontFamily: fontFamily, // Apply the specified font family
+    ...style,
+  };
+
   return (
-    <p
-      style={{
-        fontWeight: weight,
-        color: color,
-        ...style,
-      }}
-      className={`${stepStyle} ${styles.text} ${className}`}
-    >
+    <p style={fontStyles} className={`${stepStyle} ${styles.text} ${className}`}>
       {children}
     </p>
   );
@@ -63,4 +62,5 @@ Text.propTypes = {
   style: PropTypes.object,
   children: PropTypes.any,
   className: PropTypes.string,
+  fontFamily: PropTypes.string, // PropTypes for the new fontFamily prop
 };

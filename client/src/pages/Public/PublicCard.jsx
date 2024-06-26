@@ -7,6 +7,7 @@ export default function Card({ task }) {
 
   return (
     <div className={styles.container}>
+      
       <Text
         style={{ display: 'flex', alignItems: 'center', gap: '0.2rem' }}
         step={1}
@@ -17,14 +18,16 @@ export default function Card({ task }) {
         {task.priority.toUpperCase()} PRIORITY
       </Text>
 
-      <Text step={5} weight="500">
+      <Text step={7} weight="500">
         {task.title}
       </Text>
 
       <div className={styles.checklists}>
+
         <Text weight="500">
           Checklists ({dones.length + '/' + task.checklists.length})
         </Text>
+
         <div className={styles.lists}>
           {task.checklists.map((list) => (
             <div key={list.id} className={styles.list}>

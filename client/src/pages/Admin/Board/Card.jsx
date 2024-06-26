@@ -57,7 +57,11 @@ export default function Card({ task, isOpen, toggleDisclosure }) {
           >
             <span className={styles[task.priority]}>•</span>{' '}
             {task.priority.toUpperCase()} PRIORITY
+            
           </Text>
+          
+          {/*-------------------- assignee------------------------ */}
+          {task.assignee}
 
           <div className={styles.menu}>
             <Menu>

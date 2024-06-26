@@ -5,13 +5,11 @@ import styles from './styles/Checklilst.module.css';
 export default function Checklist({ list, onChange }) {
   return (
     <div className={styles.container}>
-      <input
-        type="checkbox"
-        name=""
-        id=""
-        checked={list.checked}
-        onChange={(e) => onChange(list._id, e.target.checked)}
-      />
+      
+      <div>
+        <input type="checkbox" checked={list.checked} onChange={(e) => onChange(list._id, e.target.checked)}/>
+      </div>
+      
       <Text>{list.title}</Text>
     </div>
   );

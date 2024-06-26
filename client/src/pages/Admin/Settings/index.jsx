@@ -2,7 +2,6 @@ import { yupResolver } from '@hookform/resolvers/yup';
 import { useForm } from 'react-hook-form';
 import toast from 'react-hot-toast';
 import * as yup from 'yup';
-
 import FormInput from '../../../components/form/FormInput';
 import { Button, Text } from '../../../components/ui';
 import { useContext, useEffect, useState } from 'react';
@@ -30,13 +29,7 @@ export default function Settings() {
     newPassword: '',
   };
 
-  const {
-    register,
-    handleSubmit,
-    reset,
-    setError,
-    formState: { errors, isSubmitting },
-  } = useForm({
+  const { register, handleSubmit, reset, setError, formState: { errors, isSubmitting }, } = useForm({
     defaultValues,
     resolver: yupResolver(schema),
   });
@@ -121,6 +114,8 @@ export default function Settings() {
 
         <Button>{isSubmitting ? 'Updating...' : 'Update'}</Button>
       </form>
+
+      {/* Add the Toaster component with the default position set to top-center */}
     </div>
   );
 }

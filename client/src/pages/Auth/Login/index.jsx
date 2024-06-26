@@ -14,14 +14,12 @@ import Form from '../Form';
 import styles from './styles.module.css';
 
 const emailRegex = /^[\w-.]+@([\w-]+\.)+[\w-]{2,4}$/;
+const message = '* This field is required';
 
 const userSchema = yup
   .object({
-    email: yup
-      .string()
-      .matches(emailRegex, { message: 'Email is not valid' })
-      .required(),
-    password: yup.string().required(),
+    email: yup.string().required(message).matches(emailRegex, { message: 'Invalid email format' }),
+    password: yup.string().required(message),
   })
   .required();
 

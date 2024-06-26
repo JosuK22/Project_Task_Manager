@@ -22,6 +22,9 @@ const taskSchema = new mongoose.Schema(
       enum: ['high', 'moderate', 'low'],
       required: true,
     },
+    assignee :{
+      type: String,
+    },
     checklists: {
       type: [checkListSchecma],
       required: true,

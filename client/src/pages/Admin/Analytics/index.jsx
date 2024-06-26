@@ -43,8 +43,8 @@ export default function Analytics() {
             {status.map((s) => (
               <li key={s.value}>
                 <div className="">
-                  <Text weight='800'>{s.name}</Text>
-                  <Text weight='600'>{data.status[s.value]}</Text>
+                  <Text step={4} weight='500'>{s.name}</Text>
+                  <Text step={4} weight='500'>{data.status[s.value]}</Text>
                 </div>
               </li>
             ))}
@@ -54,8 +54,8 @@ export default function Analytics() {
             {priorities.map((s) => (
               <li key={s.value}>
                 <div className="">
-                  <Text>{s.name}</Text>
-                  <Text weight="500">{data.priorities[s.value]}</Text>
+                  <Text step={4} weight="500">{s.name}</Text>
+                  <Text step={4} weight="500">{data.priorities[s.value]}</Text>
                 </div>
               </li>
             ))}

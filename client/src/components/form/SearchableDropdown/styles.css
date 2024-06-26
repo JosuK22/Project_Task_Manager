@@ -1,0 +1,92 @@
+.react-select-container{
+    border: none;
+    
+}
+.react-select__value-container{
+    /* background-color: yellow; */
+    border: none;
+}
+
+.react-select__control {
+    border-radius: 1px;
+    border: none;
+    box-shadow: none;
+    height: 50px;
+  }
+  
+  .react-select__control--is-focused {
+    border-color: #ccc;
+    box-shadow: 0 0 0 1px #ccc;
+  }
+  
+  .react-select__placeholder {
+    color: #b3b3b3;
+  }
+  
+  .react-select__single-value {
+    color: #333;
+  }
+  
+  .react-select__input {
+    color: #333;
+  }
+  
+  .react-select__menu {
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+    max-height: 175px;
+    overflow: hidden;
+  }
+  
+  .react-select__option {
+    display: flex;
+    align-items: center;
+    padding: 10px 15px;
+  }
+  
+  .react-select__option:hover {
+    background-color: #f0f0f0;
+  }
+  .boardLists{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 41px;
+    /* border: 2px solid black; */
+  }
+  .intialsContainer {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #000000;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    margin-left: 10px;
+    color: #ffffff;
+    font-weight: bold;
+    font-size: 14px;
+  }
+  
+  .emailContainer {
+    margin-left: 30px;
+    flex-grow: 1;
+    font-size: 16px;
+    color: #333;
+  }
+  
+  .assignButton {
+    margin-left: 10px;
+    padding: 5px 10px;
+    border: 1px solid #e0e0e0;
+    border-radius: 5px;
+    background-color: #fff;
+    color: #333;
+    cursor: pointer;
+    font-size: 14px;
+  }
+  
+  .assignButton:hover {
+    background-color: #f0f0f0;
+  }
+  

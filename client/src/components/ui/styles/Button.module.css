@@ -36,6 +36,8 @@
   color: white;
 }
 
+
+
 /* variant */
 
 .outline.primary {
@@ -53,6 +55,15 @@
   color: var(--error);
 }
 
+.jumbo{
+  width: 49%;
+}
+.jumbo.error{
+  background-color: transparent;
+  color: var(--error);
+  width: 49%;
+}
+
 .ghost {
   background-color: transparent;
   border-color: transparent;
@@ -63,3 +74,4 @@
 .ghost:hover {
   background-color: var(--neutral);
 }
+
