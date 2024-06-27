@@ -2,18 +2,20 @@
   display: flex;
   flex-direction: column;
   gap: 1rem;
-  height: 102%;
+  height: 100%;
 }
 
 .groupOne,
 .groupTwo {
   display: flex;
   justify-content: space-between;
+  
+  height: 50px;
 }
 
 .groupTwo {
-  height: 50px;
-  margin-top: 0.5rem;
+  
+  margin-top: 1rem;
   position: relative;
   z-index: 10;
   align-items: center;

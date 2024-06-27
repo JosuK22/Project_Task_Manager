@@ -19,7 +19,7 @@ export default function AdminLayout() {
   return (
     <div>
       <Toaster
-        position="bottom-right"
+        position="top-center"
         reverseOrder={false}
         toastOptions={{
           style: {

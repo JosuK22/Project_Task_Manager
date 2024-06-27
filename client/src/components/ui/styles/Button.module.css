@@ -56,12 +56,12 @@
 }
 
 .jumbo{
-  width: 49%;
+  width: 300px;
 }
 .jumbo.error{
   background-color: transparent;
   color: var(--error);
-  width: 49%;
+  width: 300px;
 }
 
 .ghost {

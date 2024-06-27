@@ -38,10 +38,11 @@ a {
 }
 ::-webkit-scrollbar {
   width: 5px;
+  height: 10px;
 }
 
 ::-webkit-scrollbar-track {
-  background: #ffffff;
+  background: inherit;
 }
 
 ::-webkit-scrollbar-thumb {

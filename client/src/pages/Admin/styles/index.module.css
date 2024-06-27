@@ -12,5 +12,6 @@
 .outlet {
   overflow: hidden;
   flex: 1;
-  padding: 1.5rem;
+  /* background-color: aqua; */
+  padding: 1.5rem 1.5rem .5rem 1.5rem;
 }

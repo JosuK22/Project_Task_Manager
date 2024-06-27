@@ -1,11 +1,11 @@
 .container {
   flex: 1;
-  overflow: hidden;
 }
 
 .categories {
-  height: 100%;
+  height: 850px;
   display: flex;
   gap: 2rem;
   overflow-x: auto;
+  /* background-color: red; */
 }
